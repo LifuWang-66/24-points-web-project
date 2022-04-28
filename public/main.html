@@ -7,29 +7,70 @@
         <script src="main.js" defer></script>
     </head>
     <body>
-        <div><p>Welcome to 24 points!</p>
+        <div class = "welcome-title"><p>Welcome to 24 points!</p>
         </div>
-        <div>
-            <img src="cards/red_joker.png" id = "card1" alt="2_of_hearts" width ="200px" height="300px">
-            <img src="cards/red_joker.png" id = "card2" alt="2_of_hearts" width ="200px" height="300px">
-            <img src="cards/red_joker.png" id = "card3" alt="2_of_hearts" width ="200px" height="300px">
-            <img src="cards/red_joker.png" id = "card4" alt="2_of_hearts" width ="200px" height="300px">
+        <div class = "all-cards">
+            <div class = "flip-card">
+                <div class = "flip-card-inner">
+                    <div class = "flip-card-front">
+                        <img src="cards/card_back.png" id = "back1"  width ="200px" height="300px">
+                    </div>
+                    <div class = "flip-card-back">
+                        <img src="cards/red_joker.png" id = "card1"  width ="200px" height="300px">
+                    </div>
+                </div>
+            </div>
+            <div class = "flip-card2">
+                <div class = "flip-card-inner2">
+                    <div class = "flip-card-front2">
+                        <img src="cards/card_back.png" id = "back2"  width ="200px" height="300px">
+                    </div>
+                    <div class = "flip-card-back2">
+                        <img src="cards/red_joker.png" id = "card2"  width ="200px" height="300px">
+                    </div>
+                </div>
+            </div>
+            <div class = "flip-card3">
+                <div class = "flip-card-inner3">
+                    <div class = "flip-card-front3">
+                        <img src="cards/card_back.png" id = "back3"  width ="200px" height="300px">
+                    </div>
+                    <div class = "flip-card-back3">
+                        <img src="cards/red_joker.png" id = "card3"  width ="200px" height="300px">
+                    </div>
+                </div>
+            </div>
+            <div class = "flip-card4">
+                <div class = "flip-card-inner4">
+                    <div class = "flip-card-front4">
+                        <img src="cards/card_back.png" id = "back4"  width ="200px" height="300px">
+                    </div>
+                    <div class = "flip-card-back4">
+                        <img src="cards/red_joker.png" id = "card4"  width ="200px" height="300px">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
+        
+        <div class="non-cards">
             <form>
                 <div>
-                    <label>Input formula:</label>
-                    <input type="text" class="firstFormula" id="firstFormula">
+                    <label for="inp" class="inp">
+                        <input type="text" class="firstFormula" id="firstFormula" placeholder="&nbsp;">
+                        <span class="label">Answer</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                    
                 </div>
                 <div>
-                  <input type="submit" value="checkAnswer" id="checkAnswer">  
+                  <input type="submit" value="Check Answer" id="checkAnswer">  
                 </div>
             </form>
             <div>
-                <input type="submit" value="noSolution" id="noSolution">  
+                <input type="submit" value="No Solution" id="noSolution">  
             </div>
             <div>
-                <input type="button" value="GenerateCards" id="reset">
+                <input type="button" value="Generate Cards" id="reset">
             </div>
             <div>
                 <p id="message"></p>
@@ -37,3 +78,5 @@
         </div>
     </body>
 </html>
+
+

@@ -12,7 +12,7 @@ const { response } = require("express");
 const conn = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Wlf2002.05.21",
+    password: "1028",
     database: "cs2803"
 })
 
