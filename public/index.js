@@ -23,6 +23,7 @@ function responseHandler(){
     let message = document.getElementById("message")
     message.style.display = "block"
     if (this.response.success){    
+        window.localStorage.setItem("username", username.value);
         window.location.replace("main.html");
     }else{
         console.log(this.response.success)

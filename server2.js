@@ -6,7 +6,8 @@ const costFactor = 10; // used for the alt
 let authenticated = false; // used to see if user is logged in
 
 // let's make a connection to our mysql server
-const mysql = require("mysql2")
+const mysql = require("mysql2");
+const { response } = require("express");
 
 const conn = mysql.createConnection({
     host: "localhost",
@@ -47,30 +48,30 @@ app.use(express.urlencoded({extended:false}));
 
 app.post("/register", function(req, res){
             // we check to see if username is available
-            usernameQuery = "Select username from registeredUsers where username  = ?"
-            conn.query(usernameQuery, [req.body.username], function(err, rows){ 
-                if(err){
+    usernameQuery = "Select username from registeredUsers where username  = ?"
+    conn.query(usernameQuery, [req.body.username], function(err, rows){ 
+        if(err){
+            res.json({success: false, message: "server error"})
+        }
+        // we check to see if the username is already taken
+        if (rows.length >0){
+            res.json({success: false, message: "username taken"})
+        }
+        // if it isn't, we insert the user into database
+        else{
+            // we create a password hash before storing the password
+            passwordHash = bcrypt.hashSync(req.body.password, costFactor);
+            insertUser = "insert into registeredUsers values(?, ?)"
+            conn.query(insertUser, [req.body.username, passwordHash], function(err, rows){
+                if (err){
                     res.json({success: false, message: "server error"})
                 }
-                // we check to see if the username is already taken
-                if (rows.length >0){
-                    res.json({success: false, message: "username taken"})
-                }
-                // if it isn't, we insert the user into database
                 else{
-                    // we create a password hash before storing the password
-                    passwordHash = bcrypt.hashSync(req.body.password, costFactor);
-                    insertUser = "insert into registeredUsers values(?, ?)"
-                    conn.query(insertUser, [req.body.username, passwordHash], function(err, rows){
-                        if (err){
-                            res.json({success: false, message: "server error"})
-                        }
-                        else{
-                            res.json({success: true, message: "user registered"})
-                        }
-                    })
+                    res.json({success: true, message: "user registered"})
                 }
-            });
+            })
+        }
+    });
 })
 
 // post to route "attempt login"
@@ -111,11 +112,17 @@ app.get("/win", function(req, res){
 })
 
 app.post("/checkAnswer", function(req, res){
+    let success = null;
     if (req.body.result == 24) {
-        res.json({success:true});
+        success = true;
     } else {
-        res.json({success:false});
+        success = false;
     }
+    query = "call create_record(?, ?, ?)"
+    console.log(req.body.formula)
+    conn.query(query, [req.body.username, success, req.body.formula], function(err, rows){ 
+    });
+    res.json({success: success, message: "server error"})
 })
 
 // Start the web server

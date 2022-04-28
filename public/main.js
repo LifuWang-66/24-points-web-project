@@ -1,3 +1,8 @@
+let username = "";
+function fetchUsername() {
+    username = window.localStorage["username"];
+    console.log(username);
+}
 let card1num, card2num, card3num, card4num;
 let solutions = [];
 document.getElementById("noSolution").addEventListener("click", function() {
@@ -31,6 +36,8 @@ function generateCard() {
     card3.alt = getCardStr(card3suit, card3num);
     card4.alt = getCardStr(card4suit, card4num);
     fetchFormula();
+    fetchUsername();
+    
 }
 
 function getRandomInt(max) {
@@ -75,7 +82,6 @@ function fetchFormula() {
     xhr.responseType = "json";
     xhr.open("GET", queryString);
     xhr.send();
- 
  }
  
  // TODO: Add responseReceivedHandler() here
@@ -125,8 +131,7 @@ function fetchFormula() {
         message.innerHTML = "Input does not match cards";
         return;
     }
-    query=`cardnum1=${card1num}&cardnum2=${card2num}&cardnum3=${card3num}&cardnum4=${card4num}
-            &result=${result}`
+    query= `username=${username}&result=${result}&formula=${formula.value}`
     
     url = `/checkAnswer`
     xhr.responseType = "json";   
