@@ -2,4 +2,209 @@ body{
     display:flex;
     flex-direction: column;
     text-align: center;
+    flex-wrap: nowrap;
 }
+.welcome-title{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+#checkAnswer, #noSolution, #reset{
+  align-items: center;
+  background-color: #0A66C2;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  margin: 1%;
+}
+
+.all-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.flip-card {
+    order: 1;
+    width: 200px;
+    height: 300px;
+    background-color: transparent;
+}
+.flip-card2 {
+    order: 2;
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+}
+.flip-card3 {
+    order: 3;
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+}
+.flip-card4 {
+    order: 4;
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+
+}
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card-inner3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card-inner4 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card2:hover .flip-card-inner2 {
+    transform: rotateY(180deg);
+}
+.flip-card3:hover .flip-card-inner3 {
+    transform: rotateY(180deg);
+}
+.flip-card4:hover .flip-card-inner4 {
+    transform: rotateY(180deg);
+}
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front2, .flip-card-back2 {
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front3, .flip-card-back3 {
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front4, .flip-card-back4 {
+    position: absolute;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+  /* Style the back side */
+.flip-card-back {
+    background-color: transparent;
+    color: transparent;
+    transform: rotateY(180deg);
+}
+.flip-card-back2 {
+    background-color: transparent;
+    color: transparent;
+    transform: rotateY(180deg);
+}
+.flip-card-back3 {
+    background-color: transparent;
+    color: transparent;
+    transform: rotateY(180deg);
+}
+.flip-card-back4 {
+    background-color: transparent;
+    color: transparent;
+    transform: rotateY(180deg);
+}
+
+  .inp {
+    position: relative;
+    margin: auto;
+    size: 30px;
+    width: 50%;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .inp .label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 16px;
+    color: rgb(199, 198, 198);
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .inp .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .inp input {
+    width: 50%;
+    border: 0;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.02);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    transition: all 0.15s ease;
+  }
