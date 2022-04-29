@@ -1,0 +1,50 @@
+body {
+    text-align: center;
+    background-color: azure;
+}
+a {
+    display:inline-block;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+#title {
+    font-size: xx-large;
+    font-weight: bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#history {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    color:aliceblue;
+	background:#35cfff;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+td {
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1; 
+    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+button {
+    background-color:lightblue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}

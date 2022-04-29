@@ -3,6 +3,7 @@ body{
     flex-direction: column;
     text-align: center;
     flex-wrap: nowrap;
+    background: azure;
 }
 .welcome-title{
     font-size: xx-large;

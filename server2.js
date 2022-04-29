@@ -12,7 +12,7 @@ const { response } = require("express");
 const conn = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "1028",
+    password: "Wlf2002.05.21",
     database: "cs2803"
 })
 
@@ -26,8 +26,7 @@ conn.connect(function(err){
 
 // app will be our express instance
 const app = express();
-username="ronnie"
-password="12345"
+
 
 // Serve static files from the public dir
 // if you do not include this, then navigation to the localhost will not show anything
@@ -111,6 +110,17 @@ app.get("/win", function(req, res){
     res.sendFile(__dirname + "/public/" + "win.html");
 })
 
+app.post("/getHistory", function(req, res){
+    let query = "select * from userRecord where username = ?"
+    conn.query(query, [req.body.username], function(err, rows) {
+        if (err) {
+            res.json({message: "server error"})
+        } else {
+            res.json({message: rows})
+        }
+    })
+})
+
 app.post("/checkAnswer", function(req, res){
     let success = null;
     if (req.body.result == 24) {
@@ -118,11 +128,14 @@ app.post("/checkAnswer", function(req, res){
     } else {
         success = false;
     }
-    query = "call create_record(?, ?, ?)"
-    console.log(req.body.formula)
+    let query = "call create_record(?, ?, ?)"
+    let message = "";
     conn.query(query, [req.body.username, success, req.body.formula], function(err, rows){ 
+        if (err) {
+            message = "server error";
+        }
     });
-    res.json({success: success, message: "server error"})
+    res.json({success: success, message: message})
 })
 
 // Start the web server
