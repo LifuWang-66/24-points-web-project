@@ -6,7 +6,6 @@ function fetchUsername() {
 let card1num, card2num, card3num, card4num;
 let solutions = [];
 document.getElementById("noSolution").addEventListener("click", function() {
-    window.localStorage.setItem("solutions", solutions);
     if (solutions.length > 0) {
         window.location.replace("lose.html");
     } else {
@@ -37,6 +36,7 @@ function generateCard() {
     card3.alt = getCardStr(card3suit, card3num);
     card4.alt = getCardStr(card4suit, card4num);
     fetchFormula();
+    fetchMeme();
     fetchUsername();
     
 }
@@ -74,6 +74,19 @@ function getCardStr(suitnum, ranknum) {
     return "cards/" + rank + suit;
 }
 
+function memeReceivedHandler() {
+    console.log(this.response)
+}
+function fetchMeme() {
+    // TODO: Modify to use XMLHttpRequest
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", memeReceivedHandler);
+    queryString = "https://www.poemist.com/api/v1/randompoems";
+    xhr.responseType = "json";
+    xhr.open("GET", queryString);
+    xhr.send();
+ }
+
 function fetchFormula() {
     // TODO: Modify to use XMLHttpRequest
     let xhr = new XMLHttpRequest();
@@ -99,7 +112,6 @@ function fetchFormula() {
             message.innerHTML = "No solutions.";
         }
         solutions = response["result"];
-        console.log(solutions)
     } else {
         message = document.getElementById("message");
         message.innerHTML = "Server error";
@@ -147,9 +159,7 @@ function fetchFormula() {
 function answerCheckReceivedHandler(){
     window.localStorage.setItem("solutions", solutions);
     if (this.response.success){    
-        // url = 'win.html?solutions=' + encodeURIComponent(solutions);
-        // window.location.replace(url);
-        window.location.replace("win.html");
+        // window.location.replace("win.html");
     }else{
         window.location.replace("lose.html");
     }
