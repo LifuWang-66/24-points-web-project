@@ -4,7 +4,9 @@ body{
     flex-wrap: nowrap;
     flex-basis: auto;
     text-align: center;
+    background-color: azure;
 }
+
 #title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: xx-large;
@@ -19,7 +21,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    border-radius: 20px;
+    border-radius: 10px;
     color: hsl(0deg 0% 30%);
     width: 35%;
 	}
@@ -32,7 +34,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    border-radius: 20px;
+    border-radius: 5px;
     color: hsl(0deg 0% 30%);
     width: 35%;
 }
@@ -45,7 +47,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    border-radius: 20px;
+    border-radius: 5px;
     color: hsl(0deg 0% 30%);
     width: 35%;
 	}
@@ -61,7 +63,7 @@ body{
     
     background-color: #0A66C2;
     border: 0;
-    border-radius: 100px;
+    border-radius:100px;
     color: #ffffff;
     display: inline-block;
     font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;

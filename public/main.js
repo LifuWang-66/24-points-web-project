@@ -36,7 +36,6 @@ function generateCard() {
     card3.alt = getCardStr(card3suit, card3num);
     card4.alt = getCardStr(card4suit, card4num);
     fetchFormula();
-    fetchMeme();
     fetchUsername();
     
 }
@@ -73,19 +72,6 @@ function getCardStr(suitnum, ranknum) {
 
     return "cards/" + rank + suit;
 }
-
-function memeReceivedHandler() {
-    console.log(this.response)
-}
-function fetchMeme() {
-    // TODO: Modify to use XMLHttpRequest
-    let xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", memeReceivedHandler);
-    queryString = "https://www.poemist.com/api/v1/randompoems";
-    xhr.responseType = "json";
-    xhr.open("GET", queryString);
-    xhr.send();
- }
 
 function fetchFormula() {
     // TODO: Modify to use XMLHttpRequest
@@ -159,7 +145,7 @@ function fetchFormula() {
 function answerCheckReceivedHandler(){
     window.localStorage.setItem("solutions", solutions);
     if (this.response.success){    
-        // window.location.replace("win.html");
+        window.location.replace("win.html");
     }else{
         window.location.replace("lose.html");
     }

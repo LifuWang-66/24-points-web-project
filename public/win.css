@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    
+    background-color: azure;
 }
 #result {
     font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -11,7 +11,28 @@ body {
     font-style: italic;
     
 }
-#solution, #jumpMain, #jumpHistory{
+#solution {
+    position: relative;
+    left: 33%;
+    right: 33%;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 1%;
+}
+#jumpMain, #jumpHistory{
     position: relative;
     left: 33%;
     right: 33%;

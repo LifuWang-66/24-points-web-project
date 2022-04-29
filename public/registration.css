@@ -4,6 +4,7 @@ body{
     flex-wrap: nowrap;
     flex-basis: auto;
     text-align: center;
+    background-color: azure;
 }
 #title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
