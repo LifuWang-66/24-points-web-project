@@ -3,26 +3,33 @@
     <head>
         <title>Login</title>
         <!--import style sheet-->
-        <link href="index.css" rel="stylesheet">
+        <link href="login.css" rel="stylesheet">
         <script src="index.js" defer></script>
     </head>
     <body>
         <form method="POST" action="/attempt_login">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" placeholder="username">
+            <div class="login">
+                <label for="inp" class="inp">
+                    <input type="textarea" name="username" id="username" placeholder="&nbsp;" size = 50>
+                    <span class="label">Username:</span>
+                    <span class="focus-bg"></span>
+                </label>
             </div>
             <div class="password">
-                <label for="password">Password:</label>
-                <input type="password" name="password", id="password" placeholder="password">
+                <label for="inp" class="inp">
+                    <input type="password" name="password" id="password" placeholder="&nbsp;" size = 50>
+                    <span class="label">Password:</span>
+                    <span class="focus-bg"></span>
+                </label>
+                
             </div>
             <div>
-                <input type="submit" value="login" id="login">
+                <input type="submit" value="   login   " id="login">
             </div>
         </form>
         <p hidden id="message"></p>
         <div>
-            <p>Not a user? <a href="registration">Register here</a></p>
+            <p id = "notuser">Not a user? <a  id = "register" href="registration">&nbsp&nbspRegister here&nbsp&nbsp</a></p>
         </div>
         
     </body>

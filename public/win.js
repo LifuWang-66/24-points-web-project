@@ -1,6 +1,6 @@
 function getSolution(event) {
     let solutions = window.localStorage["solutions"];
-    localStorage.removeItem("solutions")
+    // localStorage.removeItem("solutions")
     // let stringSolution = ""
     // for (answer of solutions) {
     //     stringSolution += answer

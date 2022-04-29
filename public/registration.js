@@ -12,7 +12,7 @@ function checkScreenName(event) {
     document.getElementById("passwordWarning").innerText = "password length must be greater than 5."
     if (password.value.length > 0 && password.value.length > 5) {
         password.style.setProperty("background-color", "white");
-        document.getElementById("passwordWarning").innerText = ""
+        document.getElementById("passwordWarning").innerText = "Password:"
         passwordValid = true;
     } 
     console.log(screenNameValid);
