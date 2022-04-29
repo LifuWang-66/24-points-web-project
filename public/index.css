@@ -151,23 +151,15 @@ body{
 
   /* Style the back side */
 .flip-card-back {
-    background-color: transparent;
-    color: transparent;
     transform: rotateY(180deg);
 }
 .flip-card-back2 {
-    background-color: transparent;
-    color: transparent;
     transform: rotateY(180deg);
 }
 .flip-card-back3 {
-    background-color: transparent;
-    color: transparent;
     transform: rotateY(180deg);
 }
 .flip-card-back4 {
-    background-color: transparent;
-    color: transparent;
     transform: rotateY(180deg);
 }
 

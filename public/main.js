@@ -75,7 +75,6 @@ function getCardStr(suitnum, ranknum) {
 }
 
 function fetchFormula() {
-    // TODO: Modify to use XMLHttpRequest
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", formulaReceivedHandler);
     queryString = "https://helloacm.com/api/24/" + "?a=" + card1num + "&b=" + card2num
@@ -85,19 +84,19 @@ function fetchFormula() {
     xhr.send();
  }
  
- // TODO: Add responseReceivedHandler() here
  function formulaReceivedHandler() {
     let response = this.response;
     if (response["errorCode"] == "0") {
-        if (response["result"].length > 0) {
-            answer = response["result"]
-            message = document.getElementById("message");
-            message.innerHTML = answer;
-            console.log(message);
-        } else {
-            message = document.getElementById("message");
-            message.innerHTML = "No solutions.";
-        }
+        // uncomment the following lines to print solutions in webpage
+        // if (response["result"].length > 0) {
+        //     answer = response["result"]
+        //     message = document.getElementById("message");
+        //     message.innerHTML = answer;
+        //     console.log(message);
+        // } else {
+        //     message = document.getElementById("message");
+        //     message.innerHTML = "No solutions.";
+        // }
         solutions = response["result"];
     } else {
         message = document.getElementById("message");
@@ -138,8 +137,6 @@ function fetchFormula() {
     xhr.responseType = "json";   
     xhr.open("POST", url)
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-    // notice the query string is passed as a parameter in xhr.send()
-    // this is to prevent the data from being easily sniffed
     xhr.send(query)
 }
 
