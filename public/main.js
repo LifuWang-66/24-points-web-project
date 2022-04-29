@@ -6,6 +6,7 @@ function fetchUsername() {
 let card1num, card2num, card3num, card4num;
 let solutions = [];
 document.getElementById("noSolution").addEventListener("click", function() {
+    window.localStorage.setItem("solutions", solutions);
     if (solutions.length > 0) {
         window.location.replace("lose.html");
     } else {
