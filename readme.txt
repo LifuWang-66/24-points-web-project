@@ -1,9 +1,9 @@
-Note that the files in the example require a table called registeredUsers within the database CS2803
+Note that the files in the example require a table called registeredUsers within the database
 
-Use the following queries:
+Use the following queries:https://github.com/LifuWang-66/24-points-web-project/blob/main/readme.txt
 
-create database CS2803;
-use CS2803;
+create database 24Points;
+use 24Points;
 create table registeredUsers(
     username varchar(60) primary key,
     password varchar(60) not null
